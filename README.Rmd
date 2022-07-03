@@ -1,0 +1,70 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-"
+)
+```
+
+# invariance
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+The goal of `invariance` is to help users to perform the first step in Meucci's Checklist: __The Quest for Invariance__.
+
+
+
+## Installation
+
+You can install the development version of `invariance` with the following command:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Reckziegel/CMA")
+```
+
+## Example
+
+
+```{r example}
+library(invariance)
+library(tibble)
+
+x <- as_tibble(diff(log(EuStockMarkets)))
+x
+```
+
+The main statistics of a time-series can be summarized with `series_describe`:
+
+```{r}
+series_describe(x)
+```
+
+To check if an asset is stationary - "invariant"- use the `plot_ellipsoid` function:
+
+```{r, out.height="80%", out.width="90%"}
+# must be univariate
+plot_ellipsoid(x[ , 1]) 
+```
+
+For "invariant" time-series, the shape of the ellipsoid present a circular format, like the example above.
+
+To see if a distribution shows any evidence of changing behavior due to passage of time use `ks_test`:
+
+```{r, out.height="80%", out.width="90%"}
+ks_test(x[ , 1])
+```
+
+This is the famous non-parametric Kolmogorov-Smirnov test that tries to identify if two continuous series are draw from the same reference distribution.
+
+## Reference
+
+- Meucci, Attilio, ‘The Prayer’ Ten-Step Checklist for Advanced Risk and Portfolio Management (February 2, 2011). Available at SSRN: https://ssrn.com/abstract=1753788 or http://dx.doi.org/10.2139/ssrn.1753788
