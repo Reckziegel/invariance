@@ -16,10 +16,10 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/Reckziegel/invariance/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Reckziegel/invariance/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of `invariance` is to help users to perform the first step in Meucci's Checklist: __The Quest for Invariance__.
-
 
 
 ## Installation
@@ -48,22 +48,20 @@ The main statistics of a time-series can be summarized with `series_describe`:
 series_describe(x)
 ```
 
-To check if an asset is stationary - "invariant"- use the `plot_ellipsoid` function:
+To check if an asset is stationary - "invariant" - use the `plot_ellipsoid` function:
 
 ```{r, out.height="80%", out.width="90%"}
 # must be univariate
 plot_ellipsoid(x[ , 1]) 
 ```
 
-For "invariant" time-series, the shape of the ellipsoid present a circular format, like the example above.
+For "invariant" time-series the shape of the ellipsoid shows a circular format, like in the example above.
 
-To see if a distribution shows any evidence of changing behavior due to passage of time use `ks_test`:
+To test if a distribution shows any evidence of changing behavior due to passage of time use `ks_test`:
 
 ```{r, out.height="80%", out.width="90%"}
 ks_test(x[ , 1])
 ```
-
-This is the famous non-parametric Kolmogorov-Smirnov test that tries to identify if two continuous series are draw from the same reference distribution.
 
 ## Reference
 

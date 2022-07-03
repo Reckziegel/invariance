@@ -19,10 +19,9 @@
 #' @seealso \code{\link{skewness}}
 #'
 #' @examples
-#' data(edhec_tbl)
-#'
-#' kurtosis(diff(log(EuStockMarkets)), .method = 'excess')
-#' kurtosis(edhec_tbl, .method = 'excess')
+#' if (FALSE) {
+#'   kurtosis(diff(log(EuStockMarkets)), .method = 'excess')
+#' }
 kurtosis <- function(.invariant, .method = c("excess", "moment", "fisher"), .na_rm = FALSE) {
 
   method <- match.arg(.method, choices = c("excess", "moment", "fisher"))
@@ -93,10 +92,9 @@ kurtosis <- function(.invariant, .method = c("excess", "moment", "fisher"), .na_
 #' @seealso \code{\link{kurtosis}}
 #'
 #' @examples
-#' data(edhec_tbl)
-#'
-#' skewness(diff(log(EuStockMarkets)))
-#' skewness(edhec_tbl)
+#' if (FALSE) {
+#'   skewness(diff(log(EuStockMarkets)))
+#' }
 skewness <- function(.invariant, .method = c("moment", "fisher"), .na_rm = FALSE) {
 
   method <- match.arg(.method, choices = c("moment", "fisher"))
@@ -172,7 +170,7 @@ skewness <- function(.invariant, .method = c("moment", "fisher"), .na_rm = FALSE
 #' series_describe(diff(log(EuStockMarkets[ , 1, drop = FALSE])))
 #'
 #' # multivariate
-#' series_describe(edhec_tbl)
+#' series_describe(diff(log(EuStockMarkets)))
 series_describe <- function(.invariant, .digits = 4) {
 
   assertthat::assert_that(assertthat::is.number(.digits))

@@ -24,10 +24,9 @@ internal computations.
 The method can be either \code{"moment"}, \code{"fisher"}, or \code{"excess"}.
 }
 \examples{
-data(edhec_tbl)
-
-kurtosis(diff(log(EuStockMarkets)), .method = 'excess')
-kurtosis(edhec_tbl, .method = 'excess')
+if (FALSE) {
+  kurtosis(diff(log(EuStockMarkets)), .method = 'excess')
+}
 }
 \seealso{
 \code{\link{skewness}}

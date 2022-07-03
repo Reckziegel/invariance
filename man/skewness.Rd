@@ -21,10 +21,9 @@ This function computes the kurtosis of a given data set. It was written for
 internal computations.
 }
 \examples{
-data(edhec_tbl)
-
-skewness(diff(log(EuStockMarkets)))
-skewness(edhec_tbl)
+if (FALSE) {
+  skewness(diff(log(EuStockMarkets)))
+}
 }
 \seealso{
 \code{\link{kurtosis}}

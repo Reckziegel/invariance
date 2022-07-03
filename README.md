@@ -7,6 +7,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/Reckziegel/invariance/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Reckziegel/invariance/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of `invariance` is to help users to perform the first step in
@@ -62,7 +63,7 @@ series_describe(x)
 #> #   kurtosis <dbl>
 ```
 
-To check if an asset is stationary - “invariant”- use the
+To check if an asset is stationary - “invariant” - use the
 `plot_ellipsoid` function:
 
 ``` r
@@ -72,10 +73,10 @@ plot_ellipsoid(x[ , 1])
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="90%" height="80%" />
 
-For “invariant” time-series, the shape of the ellipsoid present a
-circular format, like the example above.
+For “invariant” time-series the shape of the ellipsoid shows a circular
+format, like in the example above.
 
-To see if a distribution shows any evidence of changing behavior due to
+To test if a distribution shows any evidence of changing behavior due to
 passage of time use `ks_test`:
 
 ``` r
@@ -89,10 +90,6 @@ ks_test(x[ , 1])
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="90%" height="80%" />
-
-This is the famous non-parametric Kolmogorov-Smirnov test that tries to
-identify if two continuous series are draw from the same reference
-distribution.
 
 ## Reference
 

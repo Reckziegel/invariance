@@ -24,7 +24,7 @@ data(edhec)
 series_describe(diff(log(EuStockMarkets[ , 1, drop = FALSE])))
 
 # multivariate
-series_describe(edhec_tbl)
+series_describe(diff(log(EuStockMarkets)))
 }
 \seealso{
 \code{\link{skewness}}, \code{\link{kurtosis}}
