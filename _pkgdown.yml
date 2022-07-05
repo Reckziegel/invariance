@@ -1,4 +1,7 @@
 url: https://reckziegel.github.io/invariance/
 template:
   bootstrap: 5
+  bootswatch: litera
+
+
 

@@ -164,8 +164,6 @@ skewness <- function(.invariant, .method = c("moment", "fisher"), .na_rm = FALSE
 #' @seealso \code{\link{skewness}}, \code{\link{kurtosis}}
 #'
 #' @examples
-#' data(edhec)
-#'
 #' # univariate
 #' series_describe(diff(log(EuStockMarkets[ , 1, drop = FALSE])))
 #'

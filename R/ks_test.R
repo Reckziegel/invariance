@@ -1,13 +1,14 @@
 #' Kolmogorov-Smirnov Test for Invariance
 #'
-#' Perform two-sample Kolmogorov-Smirnov test.
+#' Perform two-sample Kolmogorov-Smirnov test by splitting the target invariant in
+#' two pieces.
 #'
 #' This function wrappers \code{\link[stats]{ks.test}}.
 #'
 #' @param .invariant An univariate timeseries.
 #' @param ... Additional arguments to be passed to \code{\link[stats]{ks.test}}.
 #'
-#' @return A ggplot2 object.
+#' @return A \code{ggplot2} object.
 #'
 #' @export
 #'
@@ -27,7 +28,7 @@ ks_test.default <- function(.invariant, ...) {
 
 #' @rdname ks_test
 #' @export
-ks_test.tbl <- function(.invariant, ...) {
+ks_test.tbl_df <- function(.invariant, ...) {
   if (any(purrr::map_lgl(.invariant, lubridate::is.Date))) {
     .invariant <- .invariant |>
       dplyr::select(where(is.numeric)) |>
@@ -50,11 +51,17 @@ ks_test.matrix <- function(.invariant, ...) {
   ks_test_(.invariant, ...)
 }
 
+#' @rdname ks_test
+#' @export
+ks_test.numeric <- function(.invariant, ...) {
+  ks_test_(.invariant, ...)
+}
+
 #' @keywords internal
 ks_test_ <- function(.invariant, ...) {
 
   assertthat::assert_that(is.numeric(.invariant))
-  assertthat::assert_that(NCOL(.invariant) <= 1, msg = "`.invariant` must an univariate series.")
+  assertthat::assert_that(NCOL(.invariant) == 1, msg = "`.invariant` must be an univariate series.")
 
   n <- NROW(.invariant)
 
@@ -70,14 +77,16 @@ ks_test_ <- function(.invariant, ...) {
     )
   )
 
-  fh <- tibble::tibble(value = x, Series = "First Half")
-  sh <- tibble::tibble(value = y, Series = "Second Half")
+  fh <- tibble::tibble(value = x, Distribution = "First Half")
+  sh <- tibble::tibble(value = y, Distribution = "Second Half")
 
   dplyr::bind_rows(fh, sh) |>
-    ggplot2::ggplot(ggplot2::aes(x = .data$value, color = .data$Series)) +
+    ggplot2::ggplot(ggplot2::aes(x = .data$value, color = .data$Distribution)) +
     ggplot2::stat_ecdf() +
     ggplot2::scale_x_continuous(labels = scales::percent_format()) +
+    ggplot2::scale_y_continuous(labels = scales::percent_format()) +
     ggplot2::scale_color_viridis_d(end = 0.75) +
-    ggplot2::labs(x = "Percentage Change", y = "Cumulative Density Function")
+    ggplot2::theme(legend.position = "bottom") +
+    ggplot2::labs(x = "Percentage Change", y = "Cumulative Density Function", color = NULL)
 
 }

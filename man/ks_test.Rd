@@ -3,20 +3,23 @@
 \name{ks_test}
 \alias{ks_test}
 \alias{ks_test.default}
-\alias{ks_test.tbl}
+\alias{ks_test.tbl_df}
 \alias{ks_test.xts}
 \alias{ks_test.matrix}
+\alias{ks_test.numeric}
 \title{Kolmogorov-Smirnov Test for Invariance}
 \usage{
 ks_test(.invariant, ...)
 
 \method{ks_test}{default}(.invariant, ...)
 
-\method{ks_test}{tbl}(.invariant, ...)
+\method{ks_test}{tbl_df}(.invariant, ...)
 
 \method{ks_test}{xts}(.invariant, ...)
 
 \method{ks_test}{matrix}(.invariant, ...)
+
+\method{ks_test}{numeric}(.invariant, ...)
 }
 \arguments{
 \item{.invariant}{An univariate timeseries.}
@@ -24,10 +27,11 @@ ks_test(.invariant, ...)
 \item{...}{Additional arguments to be passed to \code{\link[stats]{ks.test}}.}
 }
 \value{
-A ggplot2 object.
+A \code{ggplot2} object.
 }
 \description{
-Perform two-sample Kolmogorov-Smirnov test.
+Perform two-sample Kolmogorov-Smirnov test by splitting the target invariant in
+two pieces.
 }
 \details{
 This function wrappers \code{\link[stats]{ks.test}}.

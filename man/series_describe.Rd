@@ -18,8 +18,6 @@ A \code{tibble} with basic statistics for exploratory analysis.
 This function is designed for exploratory purposes.
 }
 \examples{
-data(edhec)
-
 # univariate
 series_describe(diff(log(EuStockMarkets[ , 1, drop = FALSE])))
 

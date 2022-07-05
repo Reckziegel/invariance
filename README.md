@@ -8,6 +8,7 @@
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/Reckziegel/invariance/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Reckziegel/invariance/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 The goal of `invariance` is to help users to perform the first step in
@@ -15,12 +16,12 @@ Meucci’s Checklist: **The Quest for Invariance**.
 
 ## Installation
 
-You can install the development version of `invariance` with the
-following command:
+You can install the development version of `invariance` from Github with
+`devtools`:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Reckziegel/CMA")
+devtools::install_github("Reckziegel/invariance")
 ```
 
 ## Example
@@ -29,6 +30,7 @@ devtools::install_github("Reckziegel/CMA")
 library(invariance)
 library(tibble)
 
+# Log-returns as candidates for invariance
 x <- as_tibble(diff(log(EuStockMarkets)))
 x
 #> # A tibble: 1,859 x 4
@@ -63,21 +65,21 @@ series_describe(x)
 #> #   kurtosis <dbl>
 ```
 
-To check if an asset is stationary - “invariant” - use the
-`plot_ellipsoid` function:
+To check if an asset is stationary - “invariant” - use
+`invariance_test:`
 
 ``` r
 # must be univariate
-plot_ellipsoid(x[ , 1]) 
+invariance_test(x["CAC"])
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="90%" height="80%" />
 
-For “invariant” time-series the shape of the ellipsoid shows a circular
-format, like in the example above.
+For “invariant” time-series the shape of the ellipsoid should be
+circular and the histograms should look the same.
 
 To test if a distribution shows any evidence of changing behavior due to
-passage of time use `ks_test`:
+structural breaks, regime shifts, etc. use `ks_test`:
 
 ``` r
 ks_test(x[ , 1])
@@ -90,6 +92,10 @@ ks_test(x[ , 1])
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="90%" height="80%" />
+
+If the two pieces of the distribution are statistically different among
+themselves a Bayesian estimation technique may be recommended in the
+next step of the Checklist: **Estimation**.
 
 ## Reference
 

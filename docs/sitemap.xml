@@ -1,39 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://reckziegel.github.io/invariance/404.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://reckziegel.github.io/invariance/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://reckziegel.github.io/invariance/CONTRIBUTING.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://reckziegel.github.io/invariance/index.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://reckziegel.github.io/invariance/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://reckziegel.github.io/invariance/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/reference/ks_test.html</loc>
+    <loc>https://reckziegel.github.io/invariance/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/kurtosis.html</loc>
+    <loc>https://reckziegel.github.io/invariance/reference/invariance_test.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_ellipsoid.html</loc>
+    <loc>https://reckziegel.github.io/invariance/reference/ks_test.html</loc>
   </url>
   <url>
-    <loc>/reference/series_describe.html</loc>
+    <loc>https://reckziegel.github.io/invariance/reference/kurtosis.html</loc>
   </url>
   <url>
-    <loc>/reference/skewness.html</loc>
+    <loc>https://reckziegel.github.io/invariance/reference/plot_ellipsoid.html</loc>
   </url>
   <url>
-    <loc>/reference/tidyeval.html</loc>
+    <loc>https://reckziegel.github.io/invariance/reference/plot_invariance_test.html</loc>
+  </url>
+  <url>
+    <loc>https://reckziegel.github.io/invariance/reference/series_describe.html</loc>
+  </url>
+  <url>
+    <loc>https://reckziegel.github.io/invariance/reference/skewness.html</loc>
+  </url>
+  <url>
+    <loc>https://reckziegel.github.io/invariance/reference/tidyeval.html</loc>
   </url>
 </urlset>
