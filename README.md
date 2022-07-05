@@ -65,7 +65,7 @@ series_describe(x)
 #> #   kurtosis <dbl>
 ```
 
-To check if an asset is stationary - “invariant” - use
+To check if a series is stationary - “invariant” - use
 `invariance_test:`
 
 ``` r

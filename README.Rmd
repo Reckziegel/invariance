@@ -48,7 +48,7 @@ The main statistics of a time-series can be summarized with `series_describe`:
 series_describe(x)
 ```
 
-To check if an asset is stationary - "invariant" - use `invariance_test:`
+To check if a series is stationary - "invariant" - use `invariance_test:`
 
 ```{r, out.height="80%", out.width="90%"}
 # must be univariate
