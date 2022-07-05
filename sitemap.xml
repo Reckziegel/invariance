@@ -4,6 +4,9 @@
     <loc>https://reckziegel.github.io/invariance/404.html</loc>
   </url>
   <url>
+    <loc>https://reckziegel.github.io/invariance/CONTRIBUTING.html</loc>
+  </url>
+  <url>
     <loc>https://reckziegel.github.io/invariance/LICENSE-text.html</loc>
   </url>
   <url>
@@ -19,13 +22,13 @@
     <loc>https://reckziegel.github.io/invariance/reference/index.html</loc>
   </url>
   <url>
+    <loc>https://reckziegel.github.io/invariance/reference/invariance_test.html</loc>
+  </url>
+  <url>
     <loc>https://reckziegel.github.io/invariance/reference/ks_test.html</loc>
   </url>
   <url>
     <loc>https://reckziegel.github.io/invariance/reference/kurtosis.html</loc>
-  </url>
-  <url>
-    <loc>https://reckziegel.github.io/invariance/reference/plot_ellipsoid.html</loc>
   </url>
   <url>
     <loc>https://reckziegel.github.io/invariance/reference/series_describe.html</loc>
