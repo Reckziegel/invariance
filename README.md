@@ -93,9 +93,9 @@ ks_test(x[ , 1])
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="90%" height="80%" />
 
-If the two pieces of the distribution are statistically different among
-themselves a Bayesian estimation technique may be recommended in the
-next step of the Checklist: **Estimation**.
+If the two pieces of the distribution are statistically different a
+Bayesian estimation technique may be recommended in the next step of the
+Checklist: **Estimation**.
 
 ## Reference
 

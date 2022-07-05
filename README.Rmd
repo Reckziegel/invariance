@@ -63,7 +63,7 @@ To test if a distribution shows any evidence of changing behavior due to structu
 ks_test(x[ , 1])
 ```
 
-If the two pieces of the distribution are statistically different among themselves a Bayesian estimation technique may be recommended in the next step of the Checklist: **Estimation**.
+If the two pieces of the distribution are statistically different a Bayesian estimation technique may be recommended in the next step of the Checklist: **Estimation**.
 
 ## Reference
 
