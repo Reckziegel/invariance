@@ -46,7 +46,7 @@ x
 #>  8 -0.00287 -0.00359 -0.00194   0.000837
 #>  9  0.00635  0.0110   0.000171 -0.00523 
 #> 10  0.00118  0.00436  0.00313   0.0140  
-#> # ... with 1,849 more rows
+#> # i 1,849 more rows
 ```
 
 The main statistics of a time-series can be summarized with
@@ -61,8 +61,7 @@ series_describe(x)
 #> 2 SMI           1859     0 -0.0838   -0.00380 8.86e-4 8.18e-4    0.00607  0.0497
 #> 3 CAC           1859     0 -0.0758   -0.00606 0       4.37e-4    0.00710  0.0610
 #> 4 FTSE          1859     0 -0.0414   -0.00432 8.02e-5 4.32e-4    0.00525  0.0544
-#> # ... with 4 more variables: variance <dbl>, std <dbl>, skewness <dbl>,
-#> #   kurtosis <dbl>
+#> # i 4 more variables: variance <dbl>, std <dbl>, skewness <dbl>, kurtosis <dbl>
 ```
 
 To check if a series is stationary - “invariant” - use
@@ -82,12 +81,12 @@ To test if a distribution shows any evidence of changing behavior due to
 structural breaks, regime shifts, etc. use `ks_test`:
 
 ``` r
-ks_test(x[ , 1])
+ks_test(x[ , "CAC"])
 #> 
 #>  Two-sample Kolmogorov-Smirnov test
 #> 
 #> data:  x and y
-#> D = 0.067441, p-value = 0.02917
+#> D = 0.045779, p-value = 0.2843
 #> alternative hypothesis: two-sided
 ```
 
@@ -99,7 +98,7 @@ Checklist: **Estimation**.
 
 ## Reference
 
--   Meucci, Attilio, ‘The Prayer’ Ten-Step Checklist for Advanced Risk
-    and Portfolio Management (February 2, 2011). Available at SSRN:
-    <https://ssrn.com/abstract=1753788> or
-    <http://dx.doi.org/10.2139/ssrn.1753788>
+- Meucci, Attilio, ‘The Prayer’ Ten-Step Checklist for Advanced Risk and
+  Portfolio Management (February 2, 2011). Available at SSRN:
+  <https://ssrn.com/abstract=1753788> or
+  <http://dx.doi.org/10.2139/ssrn.1753788>

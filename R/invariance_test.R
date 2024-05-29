@@ -74,7 +74,7 @@ invariance_test_ <- function(.invariant) {
   p1 <- dplyr::bind_rows(first_half, second_half) |>
 
     # Plot
-    ggplot2::ggplot(ggplot2::aes(x = .data$t, y = .data$..density.., fill = .data$half, color = .data$half)) +
+    ggplot2::ggplot(ggplot2::aes(x = .data$t, y = ggplot2::after_stat(density), fill = .data$half, color = .data$half)) +
     ggplot2::geom_histogram(show.legend = FALSE, bins = 50, alpha = 0.5) +
     ggplot2::facet_wrap(~.data$half, ncol = 2) +
     ggplot2::scale_x_continuous(labels = scales::label_percent(scale = 1), limits = c(-0.1, 0.1)) +
@@ -98,7 +98,7 @@ invariance_test_ <- function(.invariant) {
   patchwork::wrap_plots(p1 / (patchwork::plot_spacer() + p2 + patchwork::plot_spacer() +
                                 patchwork::plot_layout(widths = c(1, 1, 1)))) +
     patchwork::plot_annotation(
-      title = "Stationarity and Independence Test",
+      title    = "Stationarity and Independence Test",
       subtitle = "H0: The histograms are similar. The ellipsoid contains a circular shape."
     )
 

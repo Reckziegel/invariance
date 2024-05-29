@@ -21,6 +21,6 @@ Imports:
 Suggests: 
     roxygen2
 Encoding: UTF-8
-RoxygenNote: 7.2.0
+RoxygenNote: 7.3.1
 URL: https://reckziegel.github.io/invariance/
 BugReports: https://github.com/Reckziegel/invariance/issues

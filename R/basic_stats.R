@@ -182,7 +182,7 @@ series_describe <- function(.invariant, .digits = 4) {
     rlang::abort('At least one column must be numeric.')
   }
 
-  .invariant <- dplyr::select(.invariant, where(is.numeric))
+  .invariant <- dplyr::select(.invariant, dplyr::where(is.numeric))
 
   out <- dplyr::bind_rows(
     list(

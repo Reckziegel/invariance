@@ -60,7 +60,7 @@ For "invariant" time-series the shape of the ellipsoid should be circular and th
 To test if a distribution shows any evidence of changing behavior due to structural breaks, regime shifts, etc. use `ks_test`:
 
 ```{r, out.height="80%", out.width="90%"}
-ks_test(x[ , 1])
+ks_test(x[ , "CAC"])
 ```
 
 If the two pieces of the distribution are statistically different a Bayesian estimation technique may be recommended in the next step of the Checklist: **Estimation**.

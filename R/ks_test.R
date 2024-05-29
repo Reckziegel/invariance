@@ -31,7 +31,7 @@ ks_test.default <- function(.invariant, ...) {
 ks_test.tbl_df <- function(.invariant, ...) {
   if (any(purrr::map_lgl(.invariant, lubridate::is.Date))) {
     .invariant <- .invariant |>
-      dplyr::select(where(is.numeric)) |>
+      dplyr::select(dplyr::where(is.numeric)) |>
       as.matrix()
   } else {
     .invariant <- as.matrix(as.data.frame(.invariant))
